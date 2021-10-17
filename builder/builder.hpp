@@ -17,6 +17,10 @@ class house
                     cout << *iter << endl;
             }
         }
+        virtual ~house()
+        {
+            cout << "delete house" << endl;
+        }
 };
 
 class builder
@@ -25,7 +29,10 @@ class builder
         virtual void gen_component1() = 0;
         virtual void gen_component2() = 0;
         virtual void gen_component3() = 0;
-        virtual ~builder(){}
+        ~builder()
+        {
+            cout << "delete base builder" << endl;
+        }
 };
 
 class wood_builder: public builder
@@ -61,6 +68,7 @@ class wood_builder: public builder
         }
         ~wood_builder()
         {
+            cout << "delete wood builder" << endl;
             delete product;
         }
 };

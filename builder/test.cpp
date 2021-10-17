@@ -22,5 +22,7 @@ int main()
     director1->set_featureBC();
     h = builder1->get_product();
     h->list_components();
+    delete builder1;
+    delete director1;
     return 0;
 }
