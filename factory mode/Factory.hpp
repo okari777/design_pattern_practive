@@ -32,7 +32,7 @@ class Factory
 {
     public:
         
-        virtual Vehicle* create_vehicle() = 0;
+        virtual Vehicle* create_vehicle() const = 0;
         string introduce()
         {
             Vehicle* vehicle1 = this->create_vehicle();
@@ -46,7 +46,7 @@ class Factory
 class ship_factory: public Factory
 {
     public:
-        Vehicle* create_vehicle() override
+        Vehicle* create_vehicle() const
         {
             return new ship();
         }
@@ -55,7 +55,7 @@ class ship_factory: public Factory
 class car_factory: public Factory
 {
     public:
-        Vehicle* create_vehicle() override
+        Vehicle* create_vehicle() const
         {
             return new car();
         }
