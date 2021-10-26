@@ -1,12 +1,13 @@
 #include "prototype.hpp"
 #include <iostream>
-
+#include <mutex>
 using namespace std;
+
 
 int main()
 {
     prototype_factory* PF = new prototype_factory();
-
+    cout << "123" << endl;
     cout << "create new object from type 1" << endl;
     prototype* new_p = PF->create_prototype(prototype_0);
     new_p->set_no(10);
